@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
   # GET /people.json
   def index
     @people = Person.all
+    @person = Person.new
   end
 
   # GET /people/1
@@ -30,9 +31,11 @@ class PeopleController < ApplicationController
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
         format.json { render action: 'show', status: :created, location: @person }
+        format.js   { render action: 'show', status: :created, location: @person }
       else
         format.html { render action: 'new' }
         format.json { render json: @person.errors, status: :unprocessable_entity }
+        format.js   { render json: @person.errors, status: :unprocessable_entity }
       end
     end
   end

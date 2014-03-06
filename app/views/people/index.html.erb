@@ -1,6 +1,6 @@
 <h1>Listing people</h1>
 
-<table>
+<table class='table' id='people_table'>
   <thead>
     <tr>
       <th>First name</th>
@@ -13,17 +13,28 @@
 
   <tbody>
     <% @people.each do |person| %>
-      <tr>
-        <td><%= person.first_name %></td>
-        <td><%= person.last_name %></td>
-        <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render partial: 'table_row', locals: {person: person} %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Person', new_person_path %>
+<%= link_to 'New Person', '#new_person_modal', 'data-toggle' => 'modal' %>
+
+<div class="modal fade" id="new_person_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Create new person</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', modal: true %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
