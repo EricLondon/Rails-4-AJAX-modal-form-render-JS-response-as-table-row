@@ -1,28 +1,4 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails 4 submit modal form via AJAX and render JS response as table row:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+http://ericlondon.com/2014/03/13/rails-4-submit-modal-form-via-ajax-and-render-js-response-as-table-row.html
